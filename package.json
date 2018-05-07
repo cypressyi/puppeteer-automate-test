@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "colors": "^1.2.4"
+  },
+  "devDependencies": {
+    "puppeteer": "^1.3.0"
+  }
+}
