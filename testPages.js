@@ -2,20 +2,7 @@ const puppeteer = require('puppeteer');
 const colors = require('colors');
 
 (async () => {
-  const urls = [
-    'https://github.com/h5bp/html5asdfsa',
-    'https://events.curves.com.tw/curvestw',
-    'https://events.aso.com.tw/asotw',
-    'https://events.curves.com.tw/curvestw',
-    'https://events.westlake.com.tw/3826',
-    'https://news.rt-mart.com.tw/784',
-    'https://news.rt-mart.com.tw/main',
-    'https://www.hvc.com.tw/39',
-    'https://www.hvc.com.tw/content',
-    'https://zines.cc/4397',
-    'https://zines.cc/mwbchk'
-  ]
-
+  const website = require('./website.json')
   const browserSetting = {
     // headless: false,
     // devtools: true,
@@ -40,9 +27,9 @@ const colors = require('colors');
     }
   });
 
-  for (i = 0; i < urls.length; i = i+1) {
-    console.log(`>> Page: ${urls[i]}\n`.green)
-    await page.goto(urls[i]);
+  for (i = 0; i < website.length; i = i+1) {
+    console.log(`>> Page: ${website[i].url}\n`.green)
+    await page.goto(website[i].url);
 
     // Scroll to bottom
     await page.evaluate(async () => {
